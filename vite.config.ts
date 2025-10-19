@@ -5,7 +5,7 @@ import * as path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: 'f20-front/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
