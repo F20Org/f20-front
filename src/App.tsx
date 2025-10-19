@@ -1,7 +1,5 @@
 function App() {
-  return (
-    <> setup </>
-  )
+  return <> setup </>
 }
 
 export default App
