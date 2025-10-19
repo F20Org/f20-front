@@ -22,7 +22,24 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    "baseUrl": "src",  // Base para resolver os caminhos
+    "paths": {
+      "@assets/": ["assets/"],         
+      "@components/": ["components/"],    
+      "@routes/": ["routes/"],            
+      "@pages/": ["pages/"],              
+      "@storage/": ["storage/"],            
+      "@utils/": ["utils/"],                 
+      "@hooks/": ["hooks/"],                
+      "@constants/": ["constants/"],        
+      "@types/": ["types/"],                
+      "@themes/": ["themes/"],               
+      "@services/": ["services/"],           
+      "@contexts/": ["contexts/"],           
+      "@translations/": ["translations/"]    
+    }
   },
   "include": ["src"]
 }
