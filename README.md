@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
+Aqui está uma proposta de `README.md` para o seu projeto, focada nos pontos que você mencionou.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-----
 
-Currently, two official plugins are available:
+# F20
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📖 Sobre o Projeto
 
-## React Compiler
+**F20** é uma aplicação web desenvolvida para jogadores de Dungeons & Dragons (D\&D) que desejam criar, gerenciar e compartilhar suas fichas de personagem de forma digital e acessível.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+O objetivo é substituir a ficha de papel tradicional por uma versão online interativa, onde o jogador pode cadastrar todos os detalhes do seu personagem e vincular essa ficha a diferentes "Histórias" ou "Campanhas" das quais participa.
 
-## Expanding the ESLint configuration
+## ✨ Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  * **Criação de Personagem:** Um fluxo guiado para criar sua ficha de D\&D (provavelmente 5ª Edição) do zero, preenchendo atributos, raça, classe, antecedentes, etc.
+  * **Gerenciamento Completo:** Edite e atualize facilmente estatísticas, pontos de vida, inventário, lista de magias, proficiências e habilidades.
+  * **Múltiplos Personagens:** Crie e armazene várias fichas de personagem em uma única conta.
+  * **Gestão de Histórias:** Crie "Histórias" (ou Campanhas) e adicione seus personagens a elas, permitindo um acompanhamento fácil de qual personagem pertence a qual aventura.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 💻 Tecnologias Utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Este projeto foi construído utilizando tecnologias modernas de front-end:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+  * **[React](https://reactjs.org/)**: Biblioteca principal para a construção da interface de usuário.
+  * **[TypeScript](https://www.typescriptlang.org/)**: Superset do JavaScript que adiciona tipagem estática, aumentando a robustez e a manutenibilidade do código.
+  * **[Styled-Components](https://styled-components.com/)**: Para estilização componentizada.
+  * **[React Router](https://reactrouter.com/)**: Para gerenciamento de rotas na aplicação.
+  * **[Context API](https://pt-br.reactjs.org/docs/context.html)**: Para gerenciamento de estado global.
+
+## 🚀 Como Começar
+
+Siga as instruções abaixo para configurar e executar o projeto em seu ambiente de desenvolvimento local.
+
+### Pré-requisitos
+
+Você precisará ter o [Node.js](https://nodejs.org/en/) (que inclui o npm) instalado em sua máquina.
+
+### Instalação
+
+1.  Clone o repositório:
+    ```bash
+    git clone https://github.com/F20Org/f20-front
+    ```
+2.  Navegue até o diretório do projeto:
+    ```bash
+    cd seu-repositorio
+    ```
+3.  Instale as dependências:
+    ```bash
+    npm install
+    ```
+    *ou, se você usa yarn:*
+    ```bash
+    yarn install
+    ```
+
+### Rodando o Projeto
+
+Para iniciar o servidor de desenvolvimento:
+
+```bash
+npm start
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+*ou, se você usa yarn:*
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn start
 ```
