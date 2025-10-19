@@ -1,7 +1,3 @@
-Aqui está uma proposta de `README.md` para o seu projeto, focada nos pontos que você mencionou.
-
------
-
 # F20
 
 ## 📖 Sobre o Projeto
