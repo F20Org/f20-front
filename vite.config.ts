@@ -20,5 +20,5 @@ export default defineConfig({
       contexts: path.resolve(__dirname, 'src/contexts'),
       themes: path.resolve(__dirname, 'src/themes'),
     },
-  }
+  },
 })
