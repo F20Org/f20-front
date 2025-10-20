@@ -10,6 +10,10 @@ export const LoginContainer = styled.div`
 export const ImageContainer = styled.div`
   flex: 1;
   background: #f0f0f5;
+
+  @media (max-width: 864px) {
+    display: none;
+  }
 `
 
 export const FormContainer = styled.div`
