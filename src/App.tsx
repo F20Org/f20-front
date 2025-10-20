@@ -4,12 +4,15 @@ import { themes } from './themes'
 import { GlobalStyle } from 'themes/globalStyle'
 
 import { AppRoutes } from './Routes'
+import { AuthContextProvider } from 'contexts/Auth'
 
 function App() {
   return (
     <ThemeProvider theme={themes}>
-      <GlobalStyle />
-      <AppRoutes />
+      <AuthContextProvider>
+        <GlobalStyle />
+        <AppRoutes />
+      </AuthContextProvider>
     </ThemeProvider>
   )
 }
