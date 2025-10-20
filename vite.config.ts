@@ -5,7 +5,7 @@ import * as path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/f20-front',
+  base: '/f20-front/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
