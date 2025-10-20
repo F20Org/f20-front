@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
+import AlagardFont from 'assets/fonts/alagard.ttf'
+
 export const GlobalStyle = createGlobalStyle`
     *{
         margin: 0;
@@ -12,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Alagard'; 
 
-        src: url('./src/assets/fonts/alagard.ttf') format('truetype');
+        src: url(${AlagardFont}) format('truetype');
 
         font-weight: normal;
         font-style: normal;
