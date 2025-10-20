@@ -49,7 +49,7 @@ export const MobileOptions = styled.ul<MobileOptionsProps>`
 
   z-index: 99;
 
-  display: flex;
+  display: none;
   flex-direction: column;
 
   background: rgba(255, 255, 255, 0.95);
@@ -80,11 +80,13 @@ export const MobileOptions = styled.ul<MobileOptionsProps>`
 
   @keyframes fadeIn {
     0% {
+      display: none;
       opacity: 0;
       transform: translateY(-10px);
     }
 
     100% {
+      display: flex;
       opacity: 1;
       transform: translateY(0);
     }
@@ -92,11 +94,13 @@ export const MobileOptions = styled.ul<MobileOptionsProps>`
 
   @keyframes fadeOut {
     0% {
+      display: flex;
       opacity: 1;
       transform: translateY(0);
     }
 
     100% {
+      display: none;
       opacity: 0;
       transform: translateY(-10px);
     }
