@@ -44,4 +44,10 @@ export const FormContainer = styled.div`
       text-align: center;
     `}
   }
+
+  @media (max-width: 864px) {
+    form {
+      width: 86%;
+    }
+  }
 `
