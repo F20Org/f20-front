@@ -21,31 +21,24 @@ export const AppRoutes = () => {
   const { isAuthenticated } = useContext(AuthContext)
 
   return (
-    <AppContainer>
-      {isAuthenticated && <Header />}
-      <BrowserRouter>
+    <BrowserRouter basename='/f20-front'>
+      <AppContainer>
+        {isAuthenticated && <Header />}
         <Routes>
           <Route
-            path='/f20-front'
+            path='/'
             element={
-              <Navigate
-                to={
-                  isAuthenticated ? '/f20-front/characters' : '/f20-front/login'
-                }
-              />
+              <Navigate to={isAuthenticated ? '/characters' : '/login'} />
             }
           />
 
-          <Route path='/f20-front/login' element={<Login />} />
+          <Route path='/login' element={<Login />} />
 
-          <Route path='/f20-front/characters' element={<ListPage />} />
+          <Route path='/characters' element={<ListPage />} />
 
-          <Route
-            path='/f20-front/*'
-            element={<Navigate to='/f20-front/login' />}
-          />
+          <Route path='*' element={<Navigate to='/login' />} />
         </Routes>
-      </BrowserRouter>
-    </AppContainer>
+      </AppContainer>
+    </BrowserRouter>
   )
 }
