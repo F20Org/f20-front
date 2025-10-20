@@ -6,6 +6,10 @@ import * as path from 'path'
 export default defineConfig({
   plugins: [react()],
   base: '/f20-front/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
