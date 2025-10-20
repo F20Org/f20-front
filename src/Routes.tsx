@@ -35,8 +35,6 @@ export const AppRoutes = () => {
           <Route path='/login' element={<Login />} />
 
           <Route path='/characters' element={<ListPage />} />
-
-          <Route path='*' element={<Navigate to='/login' />} />
         </Routes>
       </AppContainer>
     </BrowserRouter>
