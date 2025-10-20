@@ -1,13 +1,12 @@
-import { Header } from 'components/Header'
-import { ListPageContainer, MainHeader, MainList } from './styles'
 import { Button } from 'components/Button'
 import { charactersListMocked } from './consts'
 import { CharacterItem } from 'components/CharacterItem'
 
+import { ListPageContainer, MainHeader, MainList } from './styles'
+
 export const ListPage = () => {
   return (
     <ListPageContainer>
-      <Header />
       <main>
         <MainHeader>
           <p> Fichas </p>
