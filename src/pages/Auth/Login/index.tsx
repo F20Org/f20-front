@@ -17,7 +17,7 @@ export const Login = () => {
     e.preventDefault()
     await fetchLogin('', '')
 
-    navigate('/f20-front/characters')
+    navigate('/characters')
   }
 
   return (
