@@ -40,9 +40,17 @@ export const MainList = styled.div`
   width: 100%;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: auto auto auto;
 
   gap: 24px;
 
   margin-top: 32px;
+
+  @media (max-width: 1060px) {
+    grid-template-columns: auto auto;
+  }
+
+  @media (max-width: 720px) {
+    grid-template-columns: auto;
+  }
 `

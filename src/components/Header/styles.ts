@@ -29,6 +29,10 @@ export const Options = styled.ul`
       color: ${({ theme }) => theme.COLORS.GRAY_300};
     }
   }
+
+  @media (max-width: 720px) {
+    display: none;
+  }
 `
 
 export const IconImage = styled.img`
@@ -39,7 +43,33 @@ export const IconImage = styled.img`
 export const UserProfileIcon = styled.div`
   width: 48px;
   height: 48px;
+
   background-color: #ccc;
+
   border-radius: 100%;
+
   cursor: pointer;
+
+  @media (max-width: 720px) {
+    display: none;
+  }
+`
+
+export const MenuMobileButton = styled.button`
+  display: none;
+
+  background-color: none;
+  border: none;
+  background: none;
+
+  @media (max-width: 720px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    cursor: pointer;
+  }
 `
