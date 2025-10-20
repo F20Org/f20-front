@@ -10,6 +10,8 @@ export const ListPageContainer = styled.div`
 
   font-size: 90px;
 
+  overflow-y: scroll;
+
   main {
     width: 100%;
     height: 100%;
@@ -32,4 +34,15 @@ export const MainHeader = styled.div`
     font-size: ${({ theme }) => theme.FONT_SIZE.XXXLARGE};
     font-family: ${({ theme }) => theme.FONTS.PRIMARY};
   }
+`
+
+export const MainList = styled.div`
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+  gap: 24px;
+
+  margin-top: 32px;
 `
