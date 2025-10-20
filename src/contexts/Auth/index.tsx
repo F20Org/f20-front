@@ -11,6 +11,7 @@ export const AuthContextProvider = (props: AuthProviderProps) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   const fetchLogin = async (email: string, password: string) => {
+    console.log('Logging in with', email, password)
     setIsAuthenticated(true)
   }
 
