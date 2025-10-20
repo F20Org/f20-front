@@ -49,7 +49,7 @@ export const MobileOptions = styled.ul<MobileOptionsProps>`
 
   z-index: 99;
 
-  display: none;
+  display: flex;
   flex-direction: column;
 
   background: rgba(255, 255, 255, 0.95);
@@ -77,16 +77,17 @@ export const MobileOptions = styled.ul<MobileOptionsProps>`
       isMobileMenuOpen ? 'fadeIn' : 'fadeOut'}
     0.3s ease-in-out;
   animation-fill-mode: forwards;
+  visibility: hidden;
 
   @keyframes fadeIn {
     0% {
-      display: none;
+      visibility: hidden;
       opacity: 0;
       transform: translateY(-10px);
     }
 
     100% {
-      display: flex;
+      visibility: visible;
       opacity: 1;
       transform: translateY(0);
     }
@@ -94,13 +95,13 @@ export const MobileOptions = styled.ul<MobileOptionsProps>`
 
   @keyframes fadeOut {
     0% {
-      display: flex;
+      visibility: visible;
       opacity: 1;
       transform: translateY(0);
     }
 
     100% {
-      display: none;
+      visibility: hidden;
       opacity: 0;
       transform: translateY(-10px);
     }
