@@ -39,8 +39,9 @@ export const InfoContainer = styled.div`
   gap: 6px;
 
   h2 {
-    font-size: ${({ theme }) => theme.FONT_SIZE.XLARGE};
+    font-size: ${({ theme }) => theme.FONT_SIZE.XXLARGE};
     font-weight: ${({ theme }) => theme.FONT_WEIGHT.MEDIUM};
+    font-family: ${({ theme }) => theme.FONTS.PRIMARY};
   }
 
   p {
