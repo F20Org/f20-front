@@ -26,7 +26,7 @@ export const themes = {
     GRAY_1000: '#000000',
   },
   FONTS: {
-    PRIMARY: 'Alagard, sans-serif',
+    PRIMARY: 'Alkhemikal, sans-serif',
     SECONDARY: '"Fira Sans", sans-serif',
   },
   FONT_SIZE: {

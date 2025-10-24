@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 import AlagardFont from 'assets/fonts/alagard.ttf'
+import AlkhemikalFont from 'assets/fonts/Alkhemikal.ttf'
 
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -15,6 +16,15 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Alagard'; 
 
         src: url(${AlagardFont}) format('truetype');
+
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Alkhemikal'; 
+
+        src: url(${AlkhemikalFont}) format('truetype');
 
         font-weight: normal;
         font-style: normal;
