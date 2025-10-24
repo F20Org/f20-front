@@ -38,6 +38,7 @@ export const themes = {
     XLARGE: '24px',
     XXLARGE: '32px',
     XXXLARGE: '48px',
+    XXXXLARGE: '84px',
   },
   FONT_WEIGHT: {
     LIGHT: 300,

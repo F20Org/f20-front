@@ -17,7 +17,7 @@ export const Login = () => {
     e.preventDefault()
     await fetchLogin('', '')
 
-    navigate('/characters')
+    navigate('/home')
   }
 
   return (

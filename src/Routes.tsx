@@ -8,6 +8,7 @@ import { Login } from 'pages/Auth/Login'
 import { ListPage } from 'pages/Characters/ListPage'
 
 import { Header } from 'components/Header'
+import { Home } from 'pages/Home'
 
 const AppContainer = styled.div`
   width: 100%;
@@ -27,12 +28,12 @@ export const AppRoutes = () => {
         <Routes>
           <Route
             path='/'
-            element={
-              <Navigate to={isAuthenticated ? '/characters' : '/login'} />
-            }
+            element={<Navigate to={isAuthenticated ? '/home' : '/login'} />}
           />
 
           <Route path='/login' element={<Login />} />
+
+          <Route path='/home' element={<Home />} />
 
           <Route path='/characters' element={<ListPage />} />
         </Routes>

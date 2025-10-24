@@ -10,17 +10,20 @@ import {
 } from './styles'
 import { Icon } from 'components/Icon'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+  const navigate = useNavigate()
+
   return (
     <HeaderContainer>
-      <IconImage src={IconLogo} />
+      <IconImage onClick={() => navigate('/home')} src={IconLogo} />
       <Options>
-        <li>Fichas</li>
+        <li onClick={() => navigate('/characters')}>Fichas</li>
         <li>Campanhas</li>
-        <li>Homebrew</li>
+        <li>Regras da Casa</li>
       </Options>
       <UserProfileIcon />
       <MenuMobileButton onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
