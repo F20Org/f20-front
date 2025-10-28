@@ -13,7 +13,7 @@ export const Attributes = () => {
           hideLegend={true}
           series={[
             {
-              label: 'Lisa',
+              label: 'Nome do personagem',
               data: [44, 64, 86, 66, 85, 65],
               fillArea: true,
               color: '#C94040',
