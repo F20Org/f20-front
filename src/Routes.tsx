@@ -9,6 +9,7 @@ import { ListPage } from 'pages/Characters/ListPage'
 
 import { Header } from 'components/Header'
 import { Home } from 'pages/Home'
+import { DetailsPage } from 'pages/Characters/DetailsPage'
 
 const AppContainer = styled.div`
   width: 100%;
@@ -36,6 +37,8 @@ export const AppRoutes = () => {
           <Route path='/home' element={<Home />} />
 
           <Route path='/characters' element={<ListPage />} />
+
+          <Route path='/characters/:id' element={<DetailsPage />} />
         </Routes>
       </AppContainer>
     </BrowserRouter>

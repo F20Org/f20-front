@@ -8,8 +8,9 @@ export const Container = styled.button`
 
   border: none;
 
-  font-size: ${({ theme }) => theme.FONT_SIZE.SMALL};
-  font-weight: ${({ theme }) => theme.FONT_WEIGHT.BOLD};
+  font-size: ${({ theme }) => theme.FONT_SIZE.MEDIUM};
+  font-weight: ${({ theme }) => theme.FONT_WEIGHT.REGULAR};
+  font-family: ${({ theme }) => theme.FONTS.PRIMARY};
 
   cursor: pointer;
 
