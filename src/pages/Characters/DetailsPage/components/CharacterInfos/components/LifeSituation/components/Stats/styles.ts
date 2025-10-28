@@ -28,6 +28,7 @@ export const StatsContainer = styled.div`
 
 interface StatsInputProps {
   color: keyof typeof themes.COLORS
+  percentage: number
 }
 
 export const StatsInput = styled.div<StatsInputProps>`
@@ -36,7 +37,12 @@ export const StatsInput = styled.div<StatsInputProps>`
   width: 100%;
   height: 48px;
 
-  background-color: ${({ theme, color }) => theme.COLORS[color]};
+  background: linear-gradient(
+    to right,
+    ${({ theme, color, percentage }) =>
+      `${theme.COLORS[color]} ${percentage}%,
+     ${theme.COLORS.GRAY_900} ${percentage}%`}
+  );
 
   align-items: center;
   justify-content: space-between;

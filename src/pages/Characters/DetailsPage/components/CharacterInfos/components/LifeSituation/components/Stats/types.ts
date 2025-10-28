@@ -9,4 +9,5 @@ export type StatsProps = {
   arrowImage: string
   arrowPlusImage: string
   borderImage: string
+  setPoints: (points: number) => void
 }

@@ -9,14 +9,22 @@ import BlueArrowPlusImage from 'assets/icons/bluePlusArrow.svg'
 import { Stats } from './components/Stats'
 
 import { LifeSituationContainer } from './styles'
+import { useState } from 'react'
 
 export const LifeSituation = () => {
+  const [life, setLife] = useState<number>(999)
+  const [lifeMax, setLifeMax] = useState<number>(999)
+
+  const [mana, setMana] = useState<number>(999)
+  const [manaMax, setManaMax] = useState<number>(999)
+
   return (
     <LifeSituationContainer>
       <Stats
-        maxPoints={999}
         label='Pontos de'
-        currentPoints={999}
+        setPoints={setLife}
+        maxPoints={lifeMax}
+        currentPoints={life}
         focusLabel='Vida (PV)'
         arrowImage={RedArrowImage}
         borderImage={LifeBorder}
@@ -25,9 +33,10 @@ export const LifeSituation = () => {
       />
 
       <Stats
-        maxPoints={999}
         label='Pontos de'
-        currentPoints={999}
+        setPoints={setMana}
+        maxPoints={manaMax}
+        currentPoints={mana}
         focusLabel='Mana (PM)'
         arrowImage={BlueArrowImage}
         borderImage={ManaBorder}

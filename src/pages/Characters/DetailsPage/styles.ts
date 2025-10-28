@@ -31,7 +31,9 @@ export const LeftBar = styled.div`
 
   display: flex;
   flex-direction: column;
+
   gap: 24px;
+  padding: 0 54px;
 `
 
 export const RightBar = styled(LeftBar)`
