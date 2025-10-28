@@ -7,7 +7,7 @@ export const AttributesContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  gap: 24px;
+  gap: 4px;
 
   width: 100%;
 
