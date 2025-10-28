@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import RedArrowImage from 'assets/icons/redArrow.svg'
 import LifeBorder from 'assets/icons/lifeBorder.svg'
 import RedArrowPlusImage from 'assets/icons/redPlusArrow.svg'
@@ -10,14 +9,19 @@ import BlueArrowPlusImage from 'assets/icons/bluePlusArrow.svg'
 import { Stats } from './components/Stats'
 
 import { LifeSituationContainer } from './styles'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const LifeSituation = () => {
-  const [life, setLife] = useState<number>(999)
-  const [lifeMax, setLifeMax] = useState<number>(999)
+  const [life, setLife] = useState<number>(0)
+  const [lifeMax, setLifeMax] = useState<number>(0)
 
-  const [mana, setMana] = useState<number>(999)
-  const [manaMax, setManaMax] = useState<number>(999)
+  const [mana, setMana] = useState<number>(0)
+  const [manaMax, setManaMax] = useState<number>(0)
+
+  useEffect(() => {
+    setLifeMax(750)
+    setManaMax(500)
+  }, [])
 
   return (
     <LifeSituationContainer>
