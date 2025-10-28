@@ -1,9 +1,15 @@
+import type { themes } from '@themes/'
 import styled from 'styled-components'
 
-export const Container = styled.button`
+interface ContainerProps {
+  backgroundColor: keyof typeof themes.COLORS
+}
+
+export const Container = styled.button<ContainerProps>`
   padding: 12px 28px;
 
-  background-color: ${(props) => props.theme.COLORS.PRIMARY_COLOR};
+  background-color: ${({ theme, backgroundColor }) =>
+    theme.COLORS[backgroundColor]};
   color: #fff;
 
   border: none;

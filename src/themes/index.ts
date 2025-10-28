@@ -1,7 +1,8 @@
 export const themes = {
   COLORS: {
-    PRIMARY_COLOR: '#C94040',
-    SECUNDARY_COLOR: '#42E2ED',
+    RED_PRIMARY_COLOR: '#C94040',
+    BLUE_PRIMARY_COLOR: '#42E2ED',
+    YELLOW_PRIMARY_COLOR: '#D28C1D',
 
     GRAY_0: '#ffffff',
     GRAY_50: '#f7f7f7',

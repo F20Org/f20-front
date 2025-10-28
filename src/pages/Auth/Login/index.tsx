@@ -32,7 +32,7 @@ export const Login = () => {
             placeholder='Digite sua senha...'
             type='password'
           />
-          <Button label='Entrar' onClick={() => {}} />
+          <Button backgroundColor='RED_PRIMARY_COLOR' label='Entrar' onClick={() => {}} />
         </form>
       </FormContainer>
     </LoginContainer>

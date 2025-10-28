@@ -19,7 +19,7 @@ export const InfosHeader = () => {
           <h2> Nome do Personagem </h2>
           <p> By Jogador </p>
         </Infos>
-        <Button label='Editar' onClick={() => {}} />
+        <Button backgroundColor='RED_PRIMARY_COLOR' label='Editar' onClick={() => {}} />
       </PrimaryInfos>
       <SecondaryInfos>
         <div>

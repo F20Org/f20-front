@@ -13,7 +13,11 @@ export const ListPage = () => {
       <main>
         <MainHeader>
           <p> Fichas </p>
-          <Button label='Adicionar' onClick={() => {}} />
+          <Button
+            backgroundColor='RED_PRIMARY_COLOR'
+            label='Adicionar'
+            onClick={() => {}}
+          />
         </MainHeader>
         <MainList>
           {charactersListMocked.map((character) => (
