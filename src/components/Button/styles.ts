@@ -6,7 +6,11 @@ interface ContainerProps {
 }
 
 export const Container = styled.button<ContainerProps>`
+  display: flex;
+  align-items: center;
+
   padding: 12px 28px;
+  gap: 8px;
 
   background-color: ${({ theme, backgroundColor }) =>
     theme.COLORS[backgroundColor]};

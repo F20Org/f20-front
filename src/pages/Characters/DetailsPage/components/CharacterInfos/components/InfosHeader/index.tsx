@@ -1,5 +1,7 @@
 import { Button } from 'components/Button'
 
+import PenIcon from 'assets/images/buttons/pen.svg'
+
 import {
   Avatar,
   Infos,
@@ -19,7 +21,12 @@ export const InfosHeader = () => {
           <h2> Nome do Personagem </h2>
           <p> By Jogador </p>
         </Infos>
-        <Button backgroundColor='RED_PRIMARY_COLOR' label='Editar' onClick={() => {}} />
+        <Button
+          icon={PenIcon}
+          backgroundColor='YELLOW_PRIMARY_COLOR'
+          label='Editar'
+          onClick={() => {}}
+        />
       </PrimaryInfos>
       <SecondaryInfos>
         <div>
