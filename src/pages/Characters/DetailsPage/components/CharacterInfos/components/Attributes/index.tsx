@@ -12,7 +12,12 @@ export const Attributes = () => {
           width={320}
           hideLegend={true}
           series={[
-            { label: 'Lisa', data: [44, 64, 86, 66, 85, 65], fillArea: true },
+            {
+              label: 'Lisa',
+              data: [44, 64, 86, 66, 85, 65],
+              fillArea: true,
+              color: '#C94040',
+            },
           ]}
           radar={{
             max: 100,
