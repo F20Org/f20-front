@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import RedArrowImage from 'assets/icons/redArrow.svg'
 import LifeBorder from 'assets/icons/lifeBorder.svg'
 import RedArrowPlusImage from 'assets/icons/redPlusArrow.svg'
