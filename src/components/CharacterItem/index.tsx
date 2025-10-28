@@ -1,5 +1,6 @@
-import { Container, Image, InfoContainer } from './styles'
 import type { CharacterItemProps } from './types'
+
+import { Container, Image, InfoContainer } from './styles'
 
 export const CharacterItem = (props: CharacterItemProps) => {
   const { name, classType, race, onClick } = props
