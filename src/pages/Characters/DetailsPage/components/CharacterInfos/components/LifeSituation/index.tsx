@@ -19,6 +19,8 @@ export const LifeSituation = () => {
   const [manaMax, setManaMax] = useState<number>(0)
 
   useEffect(() => {
+    setLife(500)
+    setMana(300)
     setLifeMax(750)
     setManaMax(500)
   }, [])
