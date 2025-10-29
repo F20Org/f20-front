@@ -1,6 +1,14 @@
 import styled, { css } from 'styled-components'
 
 export const DefenseContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 58px;
+
+  gap: 16px;
+
   h2 {
     ${({ theme }) => css`
       font-size: ${theme.FONT_SIZE.XLARGE};
@@ -11,14 +19,15 @@ export const DefenseContainer = styled.div`
 
   main {
     width: 100%;
-    height: 58px;
+    height: 100%;
+
     display: flex;
+    flex-direction: row !important;
 
     align-items: center;
     justify-content: center;
 
-    gap: 8px;
-    margin-top: 16px;
+    margin-top: 0px;
 
     background-color: ${({ theme }) => theme.COLORS.BROWN_PRIMARY_COLOR};
     border: 3px solid black;

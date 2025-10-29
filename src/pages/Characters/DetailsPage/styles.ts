@@ -22,6 +22,10 @@ export const DetailsPageContainer = styled.div`
     gap: 14px;
 
     margin-top: 48px;
+
+    @media (max-width: 1100px) {
+      flex-direction: column;
+    }
   }
 `
 
@@ -34,6 +38,15 @@ export const LeftBar = styled.div`
 
   gap: 24px;
   padding: 0 54px;
+
+  @media (max-width: 1290px) {
+    width: 48%;
+  }
+
+  @media (max-width: 1100px) {
+    width: 100%;
+    padding: 0 0;
+  }
 `
 
 export const RightBar = styled(LeftBar)`

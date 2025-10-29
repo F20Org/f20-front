@@ -93,12 +93,18 @@ export const Infos = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   h4 {
     ${({ theme }) => css`
       font-weight: ${theme.FONT_WEIGHT.REGULAR};
       font-size: ${theme.FONT_SIZE.MEDIUM};
       color: ${theme.COLORS.GRAY_1000};
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     `}
   }
 
@@ -107,6 +113,10 @@ export const Infos = styled.div`
       font-size: ${theme.FONT_SIZE.XXLARGE};
       color: ${theme.COLORS.GRAY_1000};
       font-family: ${theme.FONTS.PRIMARY};
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     `}
   }
 
@@ -114,6 +124,10 @@ export const Infos = styled.div`
     ${({ theme }) => css`
       font-size: ${theme.FONT_SIZE.SMALL};
       color: ${theme.COLORS.GRAY_1000};
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     `}
   }
 `
