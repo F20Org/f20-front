@@ -1,30 +1,40 @@
 import styled, { css } from 'styled-components'
 
 export const DefenseContainer = styled.div`
-  width: 100%;
-  height: 58px;
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 8px;
-  margin-top: 16px;
-
-  background-color: ${({ theme }) => theme.COLORS.BROWN_PRIMARY_COLOR};
-  border: 3px solid black;
-
-  span {
+  h2 {
     ${({ theme }) => css`
-      color: ${theme.COLORS.GRAY_0};
-      font-size: ${theme.FONT_SIZE.MEDIUM};
-      font-family: ${theme.FONTS.SECONDARY};
+      font-size: ${theme.FONT_SIZE.XLARGE};
+      font-family: ${theme.FONTS.PRIMARY};
       font-weight: ${theme.FONT_WEIGHT.MEDIUM};
     `}
   }
 
-  padding-left: 64px;
-  padding-right: 16px;
+  main {
+    width: 100%;
+    height: 58px;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+    margin-top: 16px;
+
+    background-color: ${({ theme }) => theme.COLORS.BROWN_PRIMARY_COLOR};
+    border: 3px solid black;
+
+    span {
+      ${({ theme }) => css`
+        color: ${theme.COLORS.GRAY_0};
+        font-size: ${theme.FONT_SIZE.MEDIUM};
+        font-family: ${theme.FONTS.SECONDARY};
+        font-weight: ${theme.FONT_WEIGHT.MEDIUM};
+      `}
+    }
+
+    padding-left: 64px;
+    padding-right: 16px;
+  }
 `
 
 export const DefenseImage = styled.div`
