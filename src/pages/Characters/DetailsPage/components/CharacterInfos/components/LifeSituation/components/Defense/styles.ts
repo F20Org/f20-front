@@ -5,14 +5,13 @@ export const DefenseContainer = styled.div`
   flex-direction: column;
 
   width: 100%;
-  height: 58px;
 
   gap: 24px;
 `
 
 export const DefenseMain = styled.div`
   width: 100%;
-  height: 100%;
+  height: 64px;
 
   display: flex;
   flex-direction: row !important;
@@ -20,7 +19,8 @@ export const DefenseMain = styled.div`
   align-items: center;
   justify-content: center;
 
-  margin-top: 0px;
+  padding-left: 64px;
+  padding-right: 16px;
 
   background-color: ${({ theme }) => theme.COLORS.BROWN_PRIMARY_COLOR};
   border: 3px solid black;
@@ -33,9 +33,6 @@ export const DefenseMain = styled.div`
       font-weight: ${theme.FONT_WEIGHT.MEDIUM};
     `}
   }
-
-  padding-left: 64px;
-  padding-right: 16px;
 `
 
 export const DefenseTitle = styled.h2`
