@@ -52,7 +52,7 @@ export const LeftBar = styled.div`
 `
 
 export const RightBar = styled(LeftBar)`
-  background-color: rgba(114, 114, 114, 1);
-
   flex: 1;
+
+  padding: 0 54px;
 `

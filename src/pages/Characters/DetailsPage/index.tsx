@@ -1,4 +1,6 @@
+import { RightSection } from './components/RightSection'
 import { CharacterInfos } from './components/CharacterInfos'
+
 import { DetailsPageContainer, LeftBar, RightBar } from './styles'
 
 export const DetailsPage = () => {
@@ -8,7 +10,9 @@ export const DetailsPage = () => {
         <LeftBar>
           <CharacterInfos />
         </LeftBar>
-        <RightBar></RightBar>
+        <RightBar>
+          <RightSection />
+        </RightBar>
       </main>
     </DetailsPageContainer>
   )
