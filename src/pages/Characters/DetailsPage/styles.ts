@@ -23,6 +23,8 @@ export const DetailsPageContainer = styled.div`
 
     margin-top: 48px;
 
+    overflow-y: scroll;
+
     @media (max-width: 1100px) {
       flex-direction: column;
     }

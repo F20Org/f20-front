@@ -1,6 +1,12 @@
 import DefenseIcon from 'assets/icons/defense.svg'
 
-import { DefenseContainer, DefenseImage, DefensePiece } from './styles'
+import {
+  DefenseContainer,
+  DefenseImage,
+  DefenseMain,
+  DefensePiece,
+  DefenseTitle,
+} from './styles'
 import { useEffect, useState } from 'react'
 
 export const Defense = () => {
@@ -25,8 +31,8 @@ export const Defense = () => {
 
   return (
     <DefenseContainer>
-      <h2> Defesa </h2>
-      <main>
+      <DefenseTitle> Defesa </DefenseTitle>
+      <DefenseMain>
         <DefenseImage>
           <img src={DefenseIcon} alt='defense-image' />
           <h3>{totalDefense}</h3>
@@ -75,7 +81,7 @@ export const Defense = () => {
             onChange={(e) => setOthers(Number(e.target.value))}
           />
         </DefensePiece>
-      </main>
+      </DefenseMain>
     </DefenseContainer>
   )
 }

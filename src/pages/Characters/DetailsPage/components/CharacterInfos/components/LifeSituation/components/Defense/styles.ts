@@ -7,43 +7,43 @@ export const DefenseContainer = styled.div`
   width: 100%;
   height: 58px;
 
-  gap: 16px;
+  gap: 24px;
+`
 
-  h2 {
+export const DefenseMain = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row !important;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 0px;
+
+  background-color: ${({ theme }) => theme.COLORS.BROWN_PRIMARY_COLOR};
+  border: 3px solid black;
+
+  span {
     ${({ theme }) => css`
-      font-size: ${theme.FONT_SIZE.XLARGE};
-      font-family: ${theme.FONTS.PRIMARY};
+      color: ${theme.COLORS.GRAY_0};
+      font-size: ${theme.FONT_SIZE.MEDIUM};
+      font-family: ${theme.FONTS.SECONDARY};
       font-weight: ${theme.FONT_WEIGHT.MEDIUM};
     `}
   }
 
-  main {
-    width: 100%;
-    height: 100%;
+  padding-left: 64px;
+  padding-right: 16px;
+`
 
-    display: flex;
-    flex-direction: row !important;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 0px;
-
-    background-color: ${({ theme }) => theme.COLORS.BROWN_PRIMARY_COLOR};
-    border: 3px solid black;
-
-    span {
-      ${({ theme }) => css`
-        color: ${theme.COLORS.GRAY_0};
-        font-size: ${theme.FONT_SIZE.MEDIUM};
-        font-family: ${theme.FONTS.SECONDARY};
-        font-weight: ${theme.FONT_WEIGHT.MEDIUM};
-      `}
-    }
-
-    padding-left: 64px;
-    padding-right: 16px;
-  }
+export const DefenseTitle = styled.h2`
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.XLARGE};
+    font-family: ${theme.FONTS.PRIMARY};
+    font-weight: ${theme.FONT_WEIGHT.MEDIUM};
+  `}
 `
 
 export const DefenseImage = styled.div`
