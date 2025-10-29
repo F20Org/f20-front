@@ -9,14 +9,14 @@ export const StatsContainer = styled.div`
 
   h2 {
     ${({ theme }) => css`
-      font-size: ${theme.FONT_SIZE.SMALL};
+      font-size: ${theme.FONT_SIZE.XSMALL};
       font-family: ${theme.FONTS.SECONDARY};
       font-weight: ${theme.FONT_WEIGHT.REGULAR};
     `}
 
     span {
       ${({ theme }) => css`
-        font-size: ${theme.FONT_SIZE.XXLARGE};
+        font-size: ${theme.FONT_SIZE.XLARGE};
         font-family: ${theme.FONTS.PRIMARY};
         font-weight: ${theme.FONT_WEIGHT.MEDIUM};
       `}
@@ -35,7 +35,7 @@ export const StatsInput = styled.div<StatsInputProps>`
   display: flex;
 
   width: 100%;
-  height: 48px;
+  height: 38px;
 
   background: linear-gradient(
     to right,
@@ -72,7 +72,7 @@ export const BorderImage = styled.img<BorderImageProps>`
   ${({ inverted }) => inverted && 'right: -16px; left: unset;'}
   transform: rotate(${({ inverted }) => (inverted ? '180deg' : '0deg')});
 
-  height: 76px;
+  height: 64px;
 `
 
 interface ButtonsProps {
