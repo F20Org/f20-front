@@ -6,7 +6,7 @@ export const DefenseContainer = styled.div`
 
   width: 100%;
 
-  gap: 24px;
+  gap: 16px;
 `
 
 export const DefenseMain = styled.div`
