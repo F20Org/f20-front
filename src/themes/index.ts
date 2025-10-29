@@ -3,6 +3,7 @@ export const themes = {
     RED_PRIMARY_COLOR: '#C94040',
     BLUE_PRIMARY_COLOR: '#42E2ED',
     YELLOW_PRIMARY_COLOR: '#D28C1D',
+    BROWN_PRIMARY_COLOR: '#592E0B',
 
     GRAY_0: '#ffffff',
     GRAY_50: '#f7f7f7',

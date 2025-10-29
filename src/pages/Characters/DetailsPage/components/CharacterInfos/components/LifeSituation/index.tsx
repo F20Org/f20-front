@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 import RedArrowImage from 'assets/icons/redArrow.svg'
 import LifeBorder from 'assets/icons/lifeBorder.svg'
 import RedArrowPlusImage from 'assets/icons/redPlusArrow.svg'
@@ -7,9 +9,9 @@ import ManaBorder from 'assets/icons/manaBorder.svg'
 import BlueArrowPlusImage from 'assets/icons/bluePlusArrow.svg'
 
 import { Stats } from './components/Stats'
+import { Defense } from './components/Defense'
 
 import { LifeSituationContainer } from './styles'
-import { useEffect, useState } from 'react'
 
 export const LifeSituation = () => {
   const [life, setLife] = useState<number>(0)
@@ -50,6 +52,8 @@ export const LifeSituation = () => {
         color='BLUE_PRIMARY_COLOR'
         arrowPlusImage={BlueArrowPlusImage}
       />
+
+      <Defense />
     </LifeSituationContainer>
   )
 }
