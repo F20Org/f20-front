@@ -5,13 +5,16 @@ import { GlobalStyle } from 'themes/globalStyle'
 
 import { AppRoutes } from './Routes'
 import { AuthContextProvider } from 'contexts/Auth'
+import { RollsContextProvider } from 'contexts/Rolls'
 
 function App() {
   return (
     <ThemeProvider theme={themes}>
       <AuthContextProvider>
-        <GlobalStyle />
-        <AppRoutes />
+        <RollsContextProvider>
+          <GlobalStyle />
+          <AppRoutes />
+        </RollsContextProvider>
       </AuthContextProvider>
     </ThemeProvider>
   )
