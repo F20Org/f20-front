@@ -48,6 +48,7 @@ export const RollsSection = () => {
     })
 
     addRoll('Rolagem Manual', finalResult, rollInput)
+    setRollInput('')
   }
 
   return (
