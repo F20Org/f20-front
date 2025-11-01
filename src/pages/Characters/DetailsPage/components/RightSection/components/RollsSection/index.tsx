@@ -15,6 +15,8 @@ export const RollsSection = () => {
   const [rollInput, setRollInput] = useState<string>('')
 
   const handleRollClick = () => {
+    if (rollInput.trim() === '') return
+
     let finalResult = 0
     const rollList = rollInput.split('+').map((roll) => roll.trim())
 
