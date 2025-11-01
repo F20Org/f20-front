@@ -6,6 +6,8 @@ export const RightSectionContainer = styled.div`
   flex-direction: column;
 
   width: 100%;
+
+  gap: 16px;
 `
 
 export const RightNavBar = styled.nav`
