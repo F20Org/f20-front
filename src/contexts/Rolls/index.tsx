@@ -14,6 +14,10 @@ export const RollsContextProvider = (props: RollsProviderProps) => {
 
   const addRoll = (name: string, result: number, formula: string) => {
     setRollsHistory((prev) => [{ name, result, formula }, ...prev])
+
+    if (rollsHistory.length >= 9) {
+      setRollsHistory((prev) => prev.slice(0, 9))
+    }
   }
 
   const clearRolls = () => {
