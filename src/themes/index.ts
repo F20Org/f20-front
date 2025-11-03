@@ -23,9 +23,9 @@ export const themes = {
     GRAY_700: '#949494',
     GRAY_750: '#8c8c8c',
     GRAY_800: '#858585',
-    GRAY_850: '#7d7d7d',
-    GRAY_900: '#757575',
-    GRAY_950: '#6e6e6e',
+    GRAY_850: '#5f5f5fff',
+    GRAY_900: '#3b3b3bff',
+    GRAY_950: '#313131ff',
     GRAY_1000: '#000000',
   },
   FONTS: {
