@@ -8,6 +8,7 @@ import { Button } from 'components/Button'
 import { Rolls } from './components/Rolls'
 
 import { RollContainer, RollInput, RollsSectionContainer } from './styles'
+import { Attacks } from './components/Attacks'
 
 export const RollsSection = () => {
   const { addRoll } = useContext(RollsContext)
@@ -70,6 +71,7 @@ export const RollsSection = () => {
         />
       </RollContainer>
       <Rolls />
+      <Attacks />
     </RollsSectionContainer>
   )
 }
