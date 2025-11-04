@@ -2,8 +2,10 @@ import { useState } from 'react'
 
 import { NAV_BAR_OPTIONS } from './consts'
 
-import { NavBarOption, RightNavBar, RightSectionContainer } from './styles'
 import { RollsSection } from './components/RollsSection'
+import { SkillsSection } from './components/SkillsSection'
+
+import { NavBarOption, RightNavBar, RightSectionContainer } from './styles'
 
 export const RightSection = () => {
   const [selectedOption, setSelectedOption] = useState<string>(
@@ -27,7 +29,8 @@ export const RightSection = () => {
           ))}
         </ul>
       </RightNavBar>
-      <RollsSection />
+      {selectedOption === 'rolls' && <RollsSection />}
+      {selectedOption === 'skills' && <SkillsSection />}
     </RightSectionContainer>
   )
 }
