@@ -4,11 +4,11 @@ import DiceIcon from 'assets/icons/dice.svg'
 
 import { RollsContext } from 'contexts/Rolls'
 
-import { Button } from 'components/Button'
 import { Rolls } from './components/Rolls'
-
-import { RollContainer, RollInput, RollsSectionContainer } from './styles'
+import { SearchInput } from '../SearchInput'
 import { Attacks } from './components/Attacks'
+
+import { RollsSectionContainer } from './styles'
 
 export const RollsSection = () => {
   const { addRoll } = useContext(RollsContext)
@@ -56,20 +56,15 @@ export const RollsSection = () => {
 
   return (
     <RollsSectionContainer>
-      <RollContainer>
-        <RollInput
-          placeholder='Rodar dado (1d10+10)'
-          type='text'
-          value={rollInput}
-          onChange={(e) => setRollInput(e.target.value)}
-        />
-        <Button
-          backgroundColor='RED_PRIMARY_COLOR'
-          label='Rolar'
-          onClick={handleRollClick}
-          icon={DiceIcon}
-        />
-      </RollContainer>
+      <SearchInput
+        buttonText='Rolar'
+        handleClick={handleRollClick}
+        searchInput={rollInput}
+        setSearchInput={setRollInput}
+        buttonColor='RED_PRIMARY_COLOR'
+        placeholder='Rodar dado (1d10+10)'
+        icon={DiceIcon}
+      />
       <Rolls />
       <Attacks />
     </RollsSectionContainer>

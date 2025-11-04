@@ -6,6 +6,7 @@ import { RollsSection } from './components/RollsSection'
 import { SkillsSection } from './components/SkillsSection'
 
 import { NavBarOption, RightNavBar, RightSectionContainer } from './styles'
+import { SpellsSection } from './components/SpellsSection'
 
 export const RightSection = () => {
   const [selectedOption, setSelectedOption] = useState<string>(
@@ -31,6 +32,7 @@ export const RightSection = () => {
       </RightNavBar>
       {selectedOption === 'rolls' && <RollsSection />}
       {selectedOption === 'skills' && <SkillsSection />}
+      {selectedOption === 'spells' && <SpellsSection />}
     </RightSectionContainer>
   )
 }
