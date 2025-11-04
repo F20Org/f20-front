@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { Race } from './components/Race'
+import { Class } from './components/Class'
 import { SearchInput } from '../SearchInput'
 
 import BookIcon from 'assets/icons/magicBook.svg'
@@ -20,6 +22,8 @@ export const SkillsSection = () => {
         placeholder='Pesquisar Habilidades'
         icon={BookIcon}
       />
+      <Race />
+      <Class />
     </SkillsSectionContainer>
   )
 }
