@@ -4,13 +4,13 @@ import { SearchInput } from '../SearchInput'
 
 import BookIcon from 'assets/icons/magicBook.svg'
 
-import { RollsSectionContainer } from './styles'
+import { SkillsSectionContainer } from './styles'
 
 export const SkillsSection = () => {
   const [searchInput, setSearchInput] = useState('')
 
   return (
-    <RollsSectionContainer>
+    <SkillsSectionContainer>
       <SearchInput
         buttonText='Pesquisar'
         handleClick={() => {}}
@@ -20,6 +20,6 @@ export const SkillsSection = () => {
         placeholder='Pesquisar Habilidades'
         icon={BookIcon}
       />
-    </RollsSectionContainer>
+    </SkillsSectionContainer>
   )
 }

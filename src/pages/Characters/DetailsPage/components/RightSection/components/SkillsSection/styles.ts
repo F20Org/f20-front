@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const RollsSectionContainer = styled.div`
+export const SkillsSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
