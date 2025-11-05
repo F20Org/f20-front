@@ -30,7 +30,7 @@ export const SpellsSection = () => {
 
       <Rolls rollsHistory={spellRollsHistory} />
 
-      <Attacks attacks={attackMocks} />
+      <Attacks label='Magias' attacks={attackMocks} />
     </SpellsSectionContainer>
   )
 }

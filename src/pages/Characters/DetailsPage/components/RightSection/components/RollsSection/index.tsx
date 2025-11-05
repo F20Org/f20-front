@@ -68,7 +68,7 @@ export const RollsSection = () => {
         icon={DiceIcon}
       />
       <Rolls rollsHistory={attackRollsHistory} />
-      <Attacks attacks={attackMocks} />
+      <Attacks label='Ataques' attacks={attackMocks} />
     </RollsSectionContainer>
   )
 }

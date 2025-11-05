@@ -14,14 +14,14 @@ import {
 } from './styles'
 
 export const Attacks = (props: AttacksProps) => {
-  const { attacks } = props
+  const { attacks, label } = props
 
   const [expandedId, setExpandedId] = useState<number | null>(null)
 
   return (
     <Accordion>
       <StyledAccordionSummary expandIcon={<FaAngleUp />}>
-        Ataques
+        {label}
       </StyledAccordionSummary>
       <AccordionDetails>
         <AttacksAccordionDetails>

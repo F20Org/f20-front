@@ -1,4 +1,5 @@
 export type AttacksProps = {
+  label: string
   attacks: {
     name: string
     attack: string
