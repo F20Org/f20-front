@@ -1,8 +1,7 @@
-import { useContext } from 'react'
 import { FaAngleUp } from 'react-icons/fa'
 import { Accordion, AccordionDetails } from '@mui/material'
 
-import { RollsContext } from 'contexts/Rolls'
+import type { RollsProps } from './types'
 
 import {
   RollItem,
@@ -10,8 +9,8 @@ import {
   StyledAccordionSummary,
 } from './styles'
 
-export const Rolls = () => {
-  const { attackRollsHistory } = useContext(RollsContext)
+export const Rolls = (props: RollsProps) => {
+  const { rollsHistory } = props
 
   return (
     <Accordion>
@@ -20,7 +19,7 @@ export const Rolls = () => {
       </StyledAccordionSummary>
       <AccordionDetails>
         <RollsAccordionDetails>
-          {attackRollsHistory.map((roll, index) => (
+          {rollsHistory.map((roll, index) => (
             <RollItem key={index}>
               <h3> {roll.name} </h3>
               <div>

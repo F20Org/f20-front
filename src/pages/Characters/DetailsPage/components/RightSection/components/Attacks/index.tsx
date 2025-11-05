@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { FaAngleUp } from 'react-icons/fa'
 import { Accordion, AccordionDetails } from '@mui/material'
 
 import PenIcon from 'assets/images/buttons/pen.svg'
+
+import type { AttacksProps } from './types'
 
 import {
   AttacksAccordionDetails,
@@ -9,10 +12,10 @@ import {
   StyledAccordionSummary,
   StyledInnerAccordionSummary,
 } from './styles'
-import { useState } from 'react'
-import { attackMocks } from './consts'
 
-export const Attacks = () => {
+export const Attacks = (props: AttacksProps) => {
+  const { attacks } = props
+
   const [expandedId, setExpandedId] = useState<number | null>(null)
 
   return (
@@ -26,7 +29,7 @@ export const Attacks = () => {
             <p>Nome</p> <p>Ataque</p> <p>Dano</p> <p>Dano Extra</p>
             <p>Crítico</p>
           </header>
-          {attackMocks.map((attack, index) => (
+          {attacks.map((attack, index) => (
             <Accordion
               key={index}
               expanded={expandedId === index}

@@ -4,14 +4,16 @@ import DiceIcon from 'assets/icons/dice.svg'
 
 import { RollsContext } from 'contexts/Rolls'
 
-import { Rolls } from './components/Rolls'
+import { Rolls } from '../Rolls'
+import { Attacks } from '../Attacks'
 import { SearchInput } from '../SearchInput'
-import { Attacks } from './components/Attacks'
+
+import { attackMocks } from './consts'
 
 import { RollsSectionContainer } from './styles'
 
 export const RollsSection = () => {
-  const { addAttackRoll } = useContext(RollsContext)
+  const { addAttackRoll, attackRollsHistory } = useContext(RollsContext)
 
   const [rollInput, setRollInput] = useState<string>('')
 
@@ -65,8 +67,8 @@ export const RollsSection = () => {
         placeholder='Rodar dado (1d10+10)'
         icon={DiceIcon}
       />
-      <Rolls />
-      <Attacks />
+      <Rolls rollsHistory={attackRollsHistory} />
+      <Attacks attacks={attackMocks} />
     </RollsSectionContainer>
   )
 }

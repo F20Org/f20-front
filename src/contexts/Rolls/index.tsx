@@ -12,6 +12,10 @@ export const RollsContextProvider = (props: RollsProviderProps) => {
     RollsContextDataProps['attackRollsHistory']
   >([])
 
+  const [spellRollsHistory, setSpellRollsHistory] = useState<
+    RollsContextDataProps['spellRollsHistory']
+  >([])
+
   const addAttackRoll = (name: string, result: number, formula: string) => {
     setAttackRollsHistory((prev) => [{ name, result, formula }, ...prev])
 
@@ -24,12 +28,27 @@ export const RollsContextProvider = (props: RollsProviderProps) => {
     setAttackRollsHistory([])
   }
 
+  const addSpellRoll = (name: string, result: number, formula: string) => {
+    setSpellRollsHistory((prev) => [{ name, result, formula }, ...prev])
+
+    if (spellRollsHistory.length >= 9) {
+      setSpellRollsHistory((prev) => prev.slice(0, 9))
+    }
+  }
+
+  const clearSpellRolls = () => {
+    setSpellRollsHistory([])
+  }
+
   return (
     <RollsContext.Provider
       value={{
         attackRollsHistory,
         addAttackRoll,
         clearAttackRolls,
+        spellRollsHistory,
+        addSpellRoll,
+        clearSpellRolls,
       }}
     >
       {children}
