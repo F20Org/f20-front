@@ -21,7 +21,14 @@ export const Attributes = () => {
           ]}
           radar={{
             max: 100,
-            metrics: ['1', '2', '3', '4', '5', '6'],
+            metrics: [
+              'Força',
+              'Constituição',
+              'Destreza',
+              'Inteligência',
+              'Sabedoria',
+              'Carisma',
+            ],
           }}
         />
       </div>

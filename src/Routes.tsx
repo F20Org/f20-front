@@ -45,6 +45,8 @@ export const AppRoutes = () => {
             <Route path='/characters/:id/rolls' element={<RollsSection />} />
             <Route path='/characters/:id/skills' element={<SkillsSection />} />
             <Route path='/characters/:id/spells' element={<SpellsSection />} />
+            <Route path='/characters/:id/inventory' element={<></>} />
+            <Route path='/characters/:id/description' element={<></>} />
           </Route>
         </Routes>
       </AppContainer>
