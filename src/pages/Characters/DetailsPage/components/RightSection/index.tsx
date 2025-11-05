@@ -1,17 +1,23 @@
 import { useState } from 'react'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 import { NAV_BAR_OPTIONS } from './consts'
 
-import { RollsSection } from './components/RollsSection'
-import { SkillsSection } from './components/SkillsSection'
-
 import { NavBarOption, RightNavBar, RightSectionContainer } from './styles'
-import { SpellsSection } from './components/SpellsSection'
 
 export const RightSection = () => {
-  const [selectedOption, setSelectedOption] = useState<string>(
-    NAV_BAR_OPTIONS[0].id,
-  )
+  const navigate = useNavigate()
+
+  const [selectedOption, setSelectedOption] = useState<string>('')
+
+  const handleClick = (optionId: string) => {
+    setSelectedOption(optionId)
+
+    const currentPath = window.location.pathname
+    const basePath = currentPath.split('/').slice(2, 4).join('/')
+
+    navigate(`/${basePath}/${optionId}`)
+  }
 
   return (
     <RightSectionContainer>
@@ -22,7 +28,7 @@ export const RightSection = () => {
               key={option.id}
               selectedColor={option.selectedColor}
               isSelected={selectedOption === option.id}
-              onClick={() => setSelectedOption(option.id)}
+              onClick={() => handleClick(option.id)}
             >
               <img src={option.icon} alt={`${option.label}-icon`} />
               <span>{option.label}</span>
@@ -30,9 +36,7 @@ export const RightSection = () => {
           ))}
         </ul>
       </RightNavBar>
-      {selectedOption === 'rolls' && <RollsSection />}
-      {selectedOption === 'skills' && <SkillsSection />}
-      {selectedOption === 'spells' && <SpellsSection />}
+      <Outlet />
     </RightSectionContainer>
   )
 }
