@@ -1,11 +1,11 @@
 export type RollsContextDataProps = {
-  rollsHistory: {
+  attackRollsHistory: {
     name: string
     result: number
     formula: string
   }[]
-  addRoll: (name: string, result: number, formula: string) => void
-  clearRolls: () => void
+  addAttackRoll: (name: string, result: number, formula: string) => void
+  clearAttackRolls: () => void
 }
 
 export type RollsProviderProps = {

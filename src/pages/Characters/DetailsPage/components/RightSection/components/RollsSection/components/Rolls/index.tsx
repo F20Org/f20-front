@@ -11,7 +11,7 @@ import {
 } from './styles'
 
 export const Rolls = () => {
-  const { rollsHistory } = useContext(RollsContext)
+  const { attackRollsHistory } = useContext(RollsContext)
 
   return (
     <Accordion>
@@ -20,7 +20,7 @@ export const Rolls = () => {
       </StyledAccordionSummary>
       <AccordionDetails>
         <RollsAccordionDetails>
-          {rollsHistory.map((roll, index) => (
+          {attackRollsHistory.map((roll, index) => (
             <RollItem key={index}>
               <h3> {roll.name} </h3>
               <div>

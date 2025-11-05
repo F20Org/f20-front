@@ -11,7 +11,7 @@ import { Attacks } from './components/Attacks'
 import { RollsSectionContainer } from './styles'
 
 export const RollsSection = () => {
-  const { addRoll } = useContext(RollsContext)
+  const { addAttackRoll } = useContext(RollsContext)
 
   const [rollInput, setRollInput] = useState<string>('')
 
@@ -50,7 +50,7 @@ export const RollsSection = () => {
       }
     })
 
-    addRoll('Rolagem Manual', finalResult, rollInput)
+    addAttackRoll('Rolagem Manual', finalResult, rollInput)
     setRollInput('')
   }
 
