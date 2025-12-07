@@ -14,6 +14,7 @@ import { RollsSection } from 'pages/Characters/DetailsPage/components/RightSecti
 import { SkillsSection } from 'pages/Characters/DetailsPage/components/RightSection/components/SkillsSection'
 import { SpellsSection } from 'pages/Characters/DetailsPage/components/RightSection/components/SpellsSection'
 import { InventorySection } from 'pages/Characters/DetailsPage/components/RightSection/components/InventorySection'
+import { DescriptionSection } from 'pages/Characters/DetailsPage/components/RightSection/components/DescriptionSection'
 
 const AppContainer = styled.div`
   width: 100%;
@@ -50,7 +51,10 @@ export const AppRoutes = () => {
               path='/characters/:id/inventory'
               element={<InventorySection />}
             />
-            <Route path='/characters/:id/description' element={<></>} />
+            <Route
+              path='/characters/:id/description'
+              element={<DescriptionSection />}
+            />
           </Route>
         </Routes>
       </AppContainer>
