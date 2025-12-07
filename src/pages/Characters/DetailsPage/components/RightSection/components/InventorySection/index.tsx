@@ -3,6 +3,7 @@ import { Accordion } from '@mui/material'
 import { FaAngleUp } from 'react-icons/fa'
 
 import BookIcon from 'assets/icons/magicBook.svg'
+import PenIcon from 'assets/images/buttons/pen.svg'
 
 import { SearchInput } from '../SearchInput'
 import { StyledAccordionDetails } from 'components/Accordion/StyledAccordionDetails'
@@ -18,6 +19,7 @@ import {
 
 export const InventorySection = () => {
   const [searchInput, setSearchInput] = useState('')
+  const [expandedId, setExpandedId] = useState<number | null>(null)
 
   return (
     <InventoryContainer>
@@ -38,11 +40,21 @@ export const InventorySection = () => {
         placeholder='Pesquisar Habilidades'
         icon={BookIcon}
       />
-      {INVENTORY_ITEMS_LIST.map((item) => (
-        <Accordion key={item.id}>
+      {INVENTORY_ITEMS_LIST.map((item, index) => (
+        <Accordion
+          key={item.id}
+          expanded={expandedId === index}
+          onChange={() => setExpandedId(expandedId === index ? null : index)}
+        >
           <InventoryStyledAccordionSummary expandIcon={<FaAngleUp />}>
             <div>
-              <span>{item.name}</span> (x{item.quantity})
+              <span>
+                {expandedId === index && (
+                  <img src={PenIcon} alt='Editar' width='22' />
+                )}
+                {item.name}
+              </span>
+              (x{item.quantity})
             </div>
           </InventoryStyledAccordionSummary>
           <StyledAccordionDetails>

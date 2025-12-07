@@ -49,6 +49,10 @@ export const InventoryStyledAccordionSummary = styled(StyledAccordionSummary)`
         font-family: ${theme.FONTS.PRIMARY};
         font-size: ${theme.FONT_SIZE.LARGE};
       `}
+
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
     width: 50%;
