@@ -18,12 +18,24 @@ export const SpellsStyledAccordionSummary = styled(StyledAccordionSummary)`
       font-weight: ${theme.FONT_WEIGHT.MEDIUM};
     `}
 
+    p {
+      text-align: center;
+      width: 100%;
+    }
+
     span {
+      width: 100%;
+
       ${({ theme }) => css`
         font-family: ${theme.FONTS.PRIMARY};
         font-size: ${theme.FONT_SIZE.LARGE};
         font-weight: ${theme.FONT_WEIGHT.MEDIUM};
       `}
+
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
     }
 
     width: 75%;
