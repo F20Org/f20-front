@@ -1,16 +1,18 @@
 import { useState } from 'react'
 import { FaAngleUp } from 'react-icons/fa'
-import { Accordion, AccordionDetails } from '@mui/material'
+import { Accordion } from '@mui/material'
 
 import PenIcon from 'assets/images/buttons/pen.svg'
 
 import type { AttacksProps } from './types'
 
+import { StyledAccordionSummary } from 'components/Accordion/StyledAccordionSummary/styles'
+
 import {
   AttacksAccordionDetails,
   AttacksInnerAccordionDetails,
-  StyledAccordionSummary,
-  StyledInnerAccordionSummary,
+  AttackStyledAccordionSummary,
+  AttackStyledInnerAccordionSummary,
 } from './styles'
 
 export const Attacks = (props: AttacksProps) => {
@@ -20,10 +22,10 @@ export const Attacks = (props: AttacksProps) => {
 
   return (
     <Accordion>
-      <StyledAccordionSummary expandIcon={<FaAngleUp />}>
+      <AttackStyledAccordionSummary expandIcon={<FaAngleUp />}>
         {label}
-      </StyledAccordionSummary>
-      <AccordionDetails>
+      </AttackStyledAccordionSummary>
+      <StyledAccordionSummary>
         <AttacksAccordionDetails>
           <header>
             <p>Nome</p> <p>Ataque</p> <p>Dano</p> <p>Dano Extra</p>
@@ -37,7 +39,7 @@ export const Attacks = (props: AttacksProps) => {
                 setExpandedId(expandedId === index ? null : index)
               }
             >
-              <StyledInnerAccordionSummary expandIcon={<FaAngleUp />}>
+              <AttackStyledInnerAccordionSummary expandIcon={<FaAngleUp />}>
                 <p>
                   {expandedId === index && <span>Nome</span>}
                   {attack.name}
@@ -58,8 +60,8 @@ export const Attacks = (props: AttacksProps) => {
                   {expandedId === index && <span>Critico</span>}
                   {attack.critical}
                 </p>
-              </StyledInnerAccordionSummary>
-              <AccordionDetails>
+              </AttackStyledInnerAccordionSummary>
+              <StyledAccordionSummary>
                 <AttacksInnerAccordionDetails>
                   <div>
                     <p>
@@ -84,11 +86,11 @@ export const Attacks = (props: AttacksProps) => {
                     </p>
                   </div>
                 </AttacksInnerAccordionDetails>
-              </AccordionDetails>
+              </StyledAccordionSummary>
             </Accordion>
           ))}
         </AttacksAccordionDetails>
-      </AccordionDetails>
+      </StyledAccordionSummary>
     </Accordion>
   )
 }

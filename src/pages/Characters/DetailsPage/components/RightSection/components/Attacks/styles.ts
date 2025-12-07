@@ -1,15 +1,15 @@
-import { AccordionSummary } from '@mui/material'
+import { StyledAccordionSummary } from 'components/Accordion/StyledAccordionSummary/styles'
 import styled from 'styled-components'
 import { css } from 'styled-components'
 
-export const StyledAccordionSummary = styled(AccordionSummary)`
+export const AttackStyledAccordionSummary = styled(StyledAccordionSummary)`
   ${({ theme }) => css`
     font-family: ${theme.FONTS.PRIMARY};
     font-size: ${theme.FONT_SIZE.LARGE};
   `}
 `
 
-export const StyledInnerAccordionSummary = styled(AccordionSummary)`
+export const AttackStyledInnerAccordionSummary = styled(StyledAccordionSummary)`
   ${({ theme }) => css`
     font-family: ${theme.FONTS.PRIMARY};
     font-size: ${theme.FONT_SIZE.LARGE};
