@@ -1,5 +1,6 @@
 import { RightSection } from './components/RightSection'
 import { CharacterInfos } from './components/CharacterInfos'
+import { ExpertiseSection } from './components/ExpertiseSection'
 
 import { DetailsPageContainer, LeftBar, RightBar } from './styles'
 
@@ -14,6 +15,7 @@ export const DetailsPage = () => {
           <RightSection />
         </RightBar>
       </main>
+      <ExpertiseSection />
     </DetailsPageContainer>
   )
 }

@@ -11,6 +11,7 @@ export const DetailsPageContainer = styled.div`
   font-size: 90px;
 
   overflow-y: scroll;
+  overflow-x: hidden;
 
   main {
     display: flex;
@@ -22,8 +23,6 @@ export const DetailsPageContainer = styled.div`
     gap: 14px;
 
     margin-top: 48px;
-
-    overflow-y: scroll;
 
     @media (max-width: 1100px) {
       flex-direction: column;
