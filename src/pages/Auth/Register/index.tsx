@@ -1,42 +1,63 @@
-import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-
-import { AuthContext } from 'contexts/Auth'
 
 import { Button } from 'components/Button'
 import { Input } from 'components/Input'
 
 import { FormContainer, ImageContainer, LoginContainer } from './styles'
+import { useFormik } from 'formik'
 
 export const Register = () => {
-  const { fetchLogin } = useContext(AuthContext)
-
   const navigate = useNavigate()
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    await fetchLogin('', '')
-
-    navigate('/home')
-  }
+  const registerFormik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+    },
+    onSubmit: async (values) => {
+      console.log({ values })
+    },
+  })
 
   return (
     <LoginContainer>
       <ImageContainer />
       <FormContainer>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={registerFormik.handleSubmit}>
           <h1>Cadastrar</h1>
-          <Input label='Nome' placeholder='Digite seu nome...' type='text' />
-          <Input label='Email' placeholder='Digite seu email...' type='email' />
           <Input
-            label='Senha'
-            placeholder='Digite sua senha...'
-            type='password'
+            name='name'
+            type='text'
+            label='Nome'
+            placeholder='Digite seu nome...'
+            value={registerFormik.values.name}
+            onChange={registerFormik.handleChange}
           />
           <Input
-            label='Confirmar Senha'
-            placeholder='Digite sua senha novamente...'
+            name='email'
+            type='email'
+            label='Email'
+            placeholder='Digite seu email...'
+            value={registerFormik.values.email}
+            onChange={registerFormik.handleChange}
+          />
+          <Input
+            label='Senha'
+            name='password'
             type='password'
+            placeholder='Digite sua senha...'
+            value={registerFormik.values.password}
+            onChange={registerFormik.handleChange}
+          />
+          <Input
+            type='password'
+            name='confirmPassword'
+            label='Confirmar Senha'
+            onChange={registerFormik.handleChange}
+            placeholder='Digite sua senha novamente...'
+            value={registerFormik.values.confirmPassword}
           />
           <Button
             backgroundColor='RED_PRIMARY_COLOR'

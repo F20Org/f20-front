@@ -1,6 +1,6 @@
+import { useFormik } from 'formik'
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-
 import { AuthContext } from 'contexts/Auth'
 
 import { Button } from 'components/Button'
@@ -13,22 +13,37 @@ export const Login = () => {
 
   const navigate = useNavigate()
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    await fetchLogin('', '')
+  const loginFormik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    onSubmit: async (values) => {
+      await fetchLogin(values.email, values.password)
 
-    navigate('/home')
-  }
+      navigate('/home')
+    },
+  })
 
   return (
     <LoginContainer>
       <ImageContainer />
       <FormContainer>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={loginFormik.handleSubmit}>
           <h1>Login</h1>
-          <Input label='Email' placeholder='Digite seu email...' type='email' />
           <Input
+            name='email'
+            label='Email'
+            value={loginFormik.values.email}
+            onChange={loginFormik.handleChange}
+            placeholder='Digite seu email...'
+            type='email'
+          />
+          <Input
+            name='password'
             label='Senha'
+            value={loginFormik.values.password}
+            onChange={loginFormik.handleChange}
             placeholder='Digite sua senha...'
             type='password'
           />
