@@ -15,6 +15,7 @@ import { SkillsSection } from 'pages/Characters/DetailsPage/components/RightSect
 import { SpellsSection } from 'pages/Characters/DetailsPage/components/RightSection/components/SpellsSection'
 import { InventorySection } from 'pages/Characters/DetailsPage/components/RightSection/components/InventorySection'
 import { DescriptionSection } from 'pages/Characters/DetailsPage/components/RightSection/components/DescriptionSection'
+import { Register } from 'pages/Auth/Register'
 
 const AppContainer = styled.div`
   width: 100%;
@@ -38,6 +39,7 @@ export const AppRoutes = () => {
           />
 
           <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
 
           <Route path='/home' element={<Home />} />
 

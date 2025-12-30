@@ -8,7 +8,7 @@ import { Input } from 'components/Input'
 
 import { FormContainer, ImageContainer, LoginContainer } from './styles'
 
-export const Login = () => {
+export const Register = () => {
   const { fetchLogin } = useContext(AuthContext)
 
   const navigate = useNavigate()
@@ -25,22 +25,27 @@ export const Login = () => {
       <ImageContainer />
       <FormContainer>
         <form onSubmit={onSubmit}>
-          <h1>Login</h1>
+          <h1>Cadastrar</h1>
+          <Input label='Nome' placeholder='Digite seu nome...' type='text' />
           <Input label='Email' placeholder='Digite seu email...' type='email' />
           <Input
             label='Senha'
             placeholder='Digite sua senha...'
             type='password'
           />
+          <Input
+            label='Confirmar Senha'
+            placeholder='Digite sua senha novamente...'
+            type='password'
+          />
           <Button
             backgroundColor='RED_PRIMARY_COLOR'
-            label='Entrar'
+            label='Cadastrar'
             onClick={() => {}}
           />
         </form>
         <p>
-          Não possui uma conta?{' '}
-          <a onClick={() => navigate('/register')}>Cadastre-se</a>
+          Ja possui uma conta? <a onClick={() => navigate('/login')}>Entrar</a>
         </p>
       </FormContainer>
     </LoginContainer>

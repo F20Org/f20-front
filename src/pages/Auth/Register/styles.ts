@@ -38,16 +38,6 @@ export const FormContainer = styled.div`
     gap: 24px;
   }
 
-  h1 {
-    ${({ theme }) => css`
-      font-family: ${theme.FONTS.PRIMARY};
-      font-size: ${theme.FONT_SIZE.XXXLARGE};
-      color: ${theme.COLORS.GRAY_1000};
-
-      text-align: center;
-    `}
-  }
-
   p {
     margin-top: 16px;
 
@@ -67,6 +57,16 @@ export const FormContainer = styled.div`
         cursor: pointer;
       `}
     }
+  }
+
+  h1 {
+    ${({ theme }) => css`
+      font-family: ${theme.FONTS.PRIMARY};
+      font-size: ${theme.FONT_SIZE.XXXLARGE};
+      color: ${theme.COLORS.GRAY_1000};
+
+      text-align: center;
+    `}
   }
 
   @media (max-width: 864px) {
