@@ -10,9 +10,19 @@ export const Container = styled.div`
     margin-bottom: 14px;
     font-size: ${({ theme }) => theme.FONT_SIZE.MEDIUM};
   }
+
+  span {
+    color: ${({ theme }) => theme.COLORS.RED_PRIMARY_COLOR};
+    margin-top: 8px;
+    font-size: ${({ theme }) => theme.FONT_SIZE.SMALL};
+  }
 `
 
-export const InputContainer = styled.div`
+interface InputContainerProps {
+  hasError?: boolean
+}
+
+export const InputContainer = styled.div<InputContainerProps>`
   display: flex;
   align-items: center;
 
@@ -36,6 +46,9 @@ export const InputContainer = styled.div`
 
     padding-left: 48px;
 
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: ${({ hasError, theme }) =>
+      hasError
+        ? `2px 2px 2px ${theme.COLORS.RED_PRIMARY_COLOR}`
+        : '2px 2px 5px rgba(0, 0, 0, 0.1)'};
   }
 `
