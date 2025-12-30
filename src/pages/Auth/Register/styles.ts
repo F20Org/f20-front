@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import Banner from 'assets/images/banner.jpg'
+
 export const LoginContainer = styled.div`
   display: flex;
 
@@ -9,7 +11,7 @@ export const LoginContainer = styled.div`
 
 export const ImageContainer = styled.div`
   flex: 1;
-  background: #f0f0f5;
+  background: url(${Banner}) no-repeat center center;
 
   @media (max-width: 864px) {
     display: none;
