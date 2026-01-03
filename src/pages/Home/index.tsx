@@ -5,15 +5,18 @@ import StoriesIcon from 'assets/images/buttons/stories.svg'
 import { OptionCard } from './components/OptionCard'
 import { Container, OptionsContainer, Title } from './styles'
 import { useNavigate } from 'react-router-dom'
+import { useAuthProvider } from 'contexts/Auth'
 
 export const Home = () => {
+  const { authUser } = useAuthProvider()
+
   const navigate = useNavigate()
 
   return (
     <Container>
       <Title>
         Bem-vinde,
-        <br /> <span>Fulano!</span>
+        <br /> <span>{authUser?.username}!</span>
       </Title>
       <OptionsContainer>
         <OptionCard

@@ -1,8 +1,7 @@
-import { useContext } from 'react'
 import styled from 'styled-components'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
-import { AuthContext } from 'contexts/Auth'
+import { useAuthProvider } from 'contexts/Auth'
 
 import { Home } from 'pages/Home'
 import { Login } from 'pages/Auth/Login'
@@ -10,12 +9,12 @@ import { ListPage } from 'pages/Characters/ListPage'
 import { DetailsPage } from 'pages/Characters/DetailsPage'
 
 import { Header } from 'components/Header'
+import { Register } from 'pages/Auth/Register'
 import { RollsSection } from 'pages/Characters/DetailsPage/components/RightSection/components/RollsSection'
 import { SkillsSection } from 'pages/Characters/DetailsPage/components/RightSection/components/SkillsSection'
 import { SpellsSection } from 'pages/Characters/DetailsPage/components/RightSection/components/SpellsSection'
 import { InventorySection } from 'pages/Characters/DetailsPage/components/RightSection/components/InventorySection'
 import { DescriptionSection } from 'pages/Characters/DetailsPage/components/RightSection/components/DescriptionSection'
-import { Register } from 'pages/Auth/Register'
 
 const AppContainer = styled.div`
   width: 100%;
@@ -26,7 +25,7 @@ const AppContainer = styled.div`
 `
 
 export const AppRoutes = () => {
-  const { isAuthenticated } = useContext(AuthContext)
+  const { isAuthenticated } = useAuthProvider()
 
   return (
     <BrowserRouter basename='/f20-front'>

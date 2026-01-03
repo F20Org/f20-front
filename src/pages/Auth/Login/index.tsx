@@ -1,17 +1,16 @@
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
-import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-
-import { AuthContext } from 'contexts/Auth'
 
 import { Button } from 'components/Button'
 import { Input } from 'components/Input'
 
 import { FormContainer, ImageContainer, LoginContainer } from './styles'
+import { notify } from 'utils/snackbar'
+import { useAuthProvider } from 'contexts/Auth'
 
 export const Login = () => {
-  const { fetchLogin } = useContext(AuthContext)
+  const { fetchLogin } = useAuthProvider()
 
   const navigate = useNavigate()
 
@@ -29,9 +28,14 @@ export const Login = () => {
         .required('Senha é obrigatória'),
     }),
     onSubmit: async (values) => {
-      await fetchLogin(values.email, values.password)
+      const response = await fetchLogin(values.email, values.password)
 
-      navigate('/home')
+      if (response.status === 200) {
+        notify('Login realizado com sucesso!', 'success')
+        navigate('/home')
+      } else {
+        notify('Erro ao realizar login. Verifique suas credenciais.', 'error')
+      }
     },
   })
 

@@ -1,5 +1,19 @@
-import { createContext, useState } from 'react'
-import type { AuthContextDataProps, AuthProviderProps } from './types'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
+import type { AuthContextDataProps, AuthProviderProps, AuthUser } from './types'
+import { axiosApp } from 'utils/axiosApp'
+import type { ResponseDTO } from 'dtos/ResponseDTO'
+import { JWTdecoder } from 'utils/jwtDecode'
+import {
+  getAuthDataStorage,
+  removeAuthDataStorage,
+  saveAuthDataStorage,
+} from './../../storage/storage'
 
 export const AuthContext = createContext<AuthContextDataProps>(
   {} as AuthContextDataProps,
@@ -8,20 +22,72 @@ export const AuthContext = createContext<AuthContextDataProps>(
 export const AuthContextProvider = (props: AuthProviderProps) => {
   const { children } = props
 
+  const [authUser, setAuthUser] = useState<AuthUser>()
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
-  const fetchLogin = async (email: string, password: string) => {
-    console.log('Logging in with', email, password)
-    setIsAuthenticated(true)
-  }
+  const persistAuthUser = useCallback((data: string) => {
+    const jwtDecoded = JWTdecoder(data)
 
-  const signOut = () => {
+    if (jwtDecoded) {
+      const { sub, name } = jwtDecoded as { sub: string; name: string }
+
+      const userData: AuthUser = {
+        email: sub,
+        username: name,
+      }
+
+      setAuthUser(userData)
+
+      axiosApp.defaults.headers.common.Authorization = `Bearer ${data}`
+      saveAuthDataStorage({
+        token: data,
+      })
+      setIsAuthenticated(true)
+    } else {
+      setIsAuthenticated(false)
+    }
+  }, [])
+
+  const fetchLogin = useCallback(
+    async (email: string, password: string) => {
+      const response = await axiosApp.post<ResponseDTO<string>>('/auth/login', {
+        email,
+        password,
+      })
+
+      const { data } = response.data
+
+      persistAuthUser(data)
+
+      return response.data
+    },
+    [persistAuthUser],
+  )
+
+  const signOut = useCallback(() => {
+    removeAuthDataStorage()
     setIsAuthenticated(false)
-  }
+    setAuthUser(undefined)
+
+    axiosApp.defaults.headers.common.Authorization = undefined
+  }, [])
+
+  const loadUserData = useCallback(() => {
+    const data = getAuthDataStorage()
+
+    if (!data) return
+
+    persistAuthUser(data.token)
+  }, [persistAuthUser])
+
+  useEffect(() => {
+    loadUserData()
+  }, [loadUserData])
 
   return (
     <AuthContext.Provider
       value={{
+        authUser,
         isAuthenticated,
         fetchLogin,
         signOut,
@@ -30,4 +96,16 @@ export const AuthContextProvider = (props: AuthProviderProps) => {
       {children}
     </AuthContext.Provider>
   )
+}
+
+export const useAuthProvider = () => {
+  const context = useContext(AuthContext)
+
+  if (!context) {
+    throw new Error(
+      'useAuthContextProvider must be used within AuthContextProvider',
+    )
+  }
+
+  return context
 }
