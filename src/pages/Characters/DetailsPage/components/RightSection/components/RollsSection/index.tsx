@@ -1,8 +1,8 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 
 import DiceIcon from 'assets/icons/dice.svg'
 
-import { RollsContext } from 'contexts/Rolls'
+import { useRollsProvider } from 'contexts/Rolls'
 
 import { Rolls } from '../Rolls'
 import { Attacks } from '../Attacks'
@@ -13,7 +13,7 @@ import { attackMocks } from './consts'
 import { RollsSectionContainer } from './styles'
 
 export const RollsSection = () => {
-  const { addAttackRoll, attackRollsHistory } = useContext(RollsContext)
+  const { addAttackRoll, attackRollsHistory } = useRollsProvider()
 
   const [rollInput, setRollInput] = useState<string>('')
 

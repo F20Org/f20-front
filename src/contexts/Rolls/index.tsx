@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import type { RollsContextDataProps, RollsProviderProps } from './types'
 
 export const RollsContext = createContext<RollsContextDataProps>(
@@ -35,4 +35,16 @@ export const RollsContextProvider = (props: RollsProviderProps) => {
       {children}
     </RollsContext.Provider>
   )
+}
+
+export const useRollsProvider = () => {
+  const context = useContext(RollsContext)
+
+  if (!context) {
+    throw new Error(
+      'useRollsProvider must be used within a RollsContextProvider',
+    )
+  }
+
+  return context
 }
