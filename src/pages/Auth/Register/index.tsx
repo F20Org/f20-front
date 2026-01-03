@@ -6,6 +6,10 @@ import { Button } from 'components/Button'
 import { Input } from 'components/Input'
 
 import { FormContainer, ImageContainer, LoginContainer } from './styles'
+import { axiosApp } from 'utils/axiosApp'
+import type { ResponseDTO } from 'dtos/ResponseDTO'
+import type { UserDTO } from 'dtos/UserDTO'
+import { notify } from 'utils/snackbar'
 
 export const Register = () => {
   const navigate = useNavigate()
@@ -32,7 +36,20 @@ export const Register = () => {
         .required('Confirmação de senha é obrigatória'),
     }),
     onSubmit: async (values) => {
-      console.log({ values })
+      const response = await axiosApp.post<ResponseDTO<UserDTO>>(
+        '/auth/register',
+        {
+          username: values.name,
+          email: values.email,
+          password: values.password,
+        },
+      )
+
+      if (response.data.status === 201) {
+        notify('Cadastro realizado com sucesso!', 'success')
+      } else {
+        notify('Erro ao realizar cadastro. Tente novamente.', 'error')
+      }
     },
   })
 
