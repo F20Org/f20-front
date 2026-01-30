@@ -12,4 +12,6 @@ export type AuthProviderProps = {
   children: React.ReactNode
 }
 
-export type AuthUser = Pick<UserDTO, 'username' | 'email'>
+export type AuthUser = Pick<UserDTO, 'username' | 'email'> & {
+  emailVerified: boolean
+}

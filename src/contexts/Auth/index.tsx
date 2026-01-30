@@ -29,11 +29,16 @@ export const AuthContextProvider = (props: AuthProviderProps) => {
     const jwtDecoded = JWTdecoder(data)
 
     if (jwtDecoded) {
-      const { sub, name } = jwtDecoded as { sub: string; name: string }
+      const { sub, name, emailVerified } = jwtDecoded as {
+        sub: string
+        name: string
+        emailVerified: boolean
+      }
 
       const userData: AuthUser = {
         email: sub,
         username: name,
+        emailVerified,
       }
 
       setAuthUser(userData)
