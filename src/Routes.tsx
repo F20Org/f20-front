@@ -27,7 +27,7 @@ const AppContainer = styled.div`
 `
 
 export const AppRoutes = () => {
-  const { isAuthenticated } = useAuthProvider()
+  const { isAuthenticated, authUser } = useAuthProvider()
 
   return (
     <BrowserRouter basename='/f20-front'>
@@ -39,9 +39,24 @@ export const AppRoutes = () => {
             element={<Navigate to={isAuthenticated ? '/home' : '/login'} />}
           />
 
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/register/verify-code' element={<CodeVerify />} />
+          <Route
+            path='/login'
+            element={isAuthenticated ? <Navigate to='/home' /> : <Login />}
+          />
+          <Route
+            path='/register'
+            element={isAuthenticated ? <Navigate to='/home' /> : <Register />}
+          />
+          <Route
+            path='/register/verify-code'
+            element={
+              isAuthenticated && authUser?.emailVerified ? (
+                <Navigate to='/home' />
+              ) : (
+                <CodeVerify />
+              )
+            }
+          />
 
           <Route
             path='/home'

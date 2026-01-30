@@ -17,7 +17,7 @@ import { notify } from 'utils/snackbar'
 import { useAuthProvider } from 'contexts/Auth'
 
 export const CodeVerify = () => {
-  const { fetchLogin, authUser, setAuthUser } = useAuthProvider()
+  const { authUser, signOut } = useAuthProvider()
 
   const navigate = useNavigate()
 
@@ -54,7 +54,6 @@ export const CodeVerify = () => {
       try {
         const email =
           localStorage.getItem('emailForVerification') || authUser?.email || ''
-        const password = localStorage.getItem('passwordForVerification') || ''
 
         const response = await axiosApp.put<ResponseDTO<UserDTO>>(
           '/auth/verify-email',
@@ -67,19 +66,12 @@ export const CodeVerify = () => {
         if (response.data.status === 200) {
           notify('Código verificado realizado com sucesso!', 'success')
 
-          if (!authUser) {
-            await fetchLogin(email, password)
-          } else {
-            setAuthUser({
-              ...authUser,
-              emailVerified: true,
-            })
-          }
+          signOut()
 
           localStorage.removeItem('emailForVerification')
           localStorage.removeItem('passwordForVerification')
 
-          navigate('/')
+          navigate('/login')
         } else {
           notify('Erro ao verificar código. Tente novamente.', 'error')
         }

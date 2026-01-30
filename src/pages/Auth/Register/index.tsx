@@ -48,7 +48,6 @@ export const Register = () => {
 
         if (response.data.status === 201) {
           localStorage.setItem('emailForVerification', values.email)
-          localStorage.setItem('passwordForVerification', values.password)
 
           notify('Cadastro realizado com sucesso!', 'success')
 
