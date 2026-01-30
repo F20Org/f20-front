@@ -36,23 +36,27 @@ export const Register = () => {
         .required('Confirmação de senha é obrigatória'),
     }),
     onSubmit: async (values) => {
-      const response = await axiosApp.post<ResponseDTO<UserDTO>>(
-        '/auth/register',
-        {
-          username: values.name,
-          email: values.email,
-          password: values.password,
-        },
-      )
+      try {
+        const response = await axiosApp.post<ResponseDTO<UserDTO>>(
+          '/auth/register',
+          {
+            username: values.name,
+            email: values.email,
+            password: values.password,
+          },
+        )
 
-      if (response.data.status === 201) {
-        localStorage.setItem('emailForVerification', values.email)
-        localStorage.setItem('passwordForVerification', values.password)
+        if (response.data.status === 201) {
+          localStorage.setItem('emailForVerification', values.email)
+          localStorage.setItem('passwordForVerification', values.password)
 
-        notify('Cadastro realizado com sucesso!', 'success')
+          notify('Cadastro realizado com sucesso!', 'success')
 
-        navigate('/register/verify-code')
-      } else {
+          navigate('/register/verify-code')
+        } else {
+          notify('Erro ao realizar cadastro. Tente novamente.', 'error')
+        }
+      } catch (error) {
         notify('Erro ao realizar cadastro. Tente novamente.', 'error')
       }
     },

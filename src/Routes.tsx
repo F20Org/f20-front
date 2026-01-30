@@ -16,6 +16,7 @@ import { SpellsSection } from 'pages/Characters/DetailsPage/components/RightSect
 import { InventorySection } from 'pages/Characters/DetailsPage/components/RightSection/components/InventorySection'
 import { DescriptionSection } from 'pages/Characters/DetailsPage/components/RightSection/components/DescriptionSection'
 import { CodeVerify } from 'pages/Auth/CodeVerify'
+import { PrivateRoute } from 'components/PrivateRoute'
 
 const AppContainer = styled.div`
   width: 100%;
@@ -42,21 +43,71 @@ export const AppRoutes = () => {
           <Route path='/register' element={<Register />} />
           <Route path='/register/verify-code' element={<CodeVerify />} />
 
-          <Route path='/home' element={<Home />} />
+          <Route
+            path='/home'
+            element={
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>
+            }
+          />
 
-          <Route path='/characters' element={<ListPage />} />
+          <Route
+            path='/characters'
+            element={
+              <PrivateRoute>
+                <ListPage />
+              </PrivateRoute>
+            }
+          />
 
-          <Route path='/characters/:id' element={<DetailsPage />}>
-            <Route path='/characters/:id/rolls' element={<RollsSection />} />
-            <Route path='/characters/:id/skills' element={<SkillsSection />} />
-            <Route path='/characters/:id/spells' element={<SpellsSection />} />
+          <Route
+            path='/characters/:id'
+            element={
+              <PrivateRoute>
+                <DetailsPage />
+              </PrivateRoute>
+            }
+          >
+            <Route
+              path='/characters/:id/rolls'
+              element={
+                <PrivateRoute>
+                  <RollsSection />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path='/characters/:id/skills'
+              element={
+                <PrivateRoute>
+                  <SkillsSection />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path='/characters/:id/spells'
+              element={
+                <PrivateRoute>
+                  <SpellsSection />
+                </PrivateRoute>
+              }
+            />
             <Route
               path='/characters/:id/inventory'
-              element={<InventorySection />}
+              element={
+                <PrivateRoute>
+                  <InventorySection />
+                </PrivateRoute>
+              }
             />
             <Route
               path='/characters/:id/description'
-              element={<DescriptionSection />}
+              element={
+                <PrivateRoute>
+                  <DescriptionSection />
+                </PrivateRoute>
+              }
             />
           </Route>
         </Routes>

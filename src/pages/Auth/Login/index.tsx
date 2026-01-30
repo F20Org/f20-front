@@ -28,12 +28,16 @@ export const Login = () => {
         .required('Senha é obrigatória'),
     }),
     onSubmit: async (values) => {
-      const response = await fetchLogin(values.email, values.password)
+      try {
+        const response = await fetchLogin(values.email, values.password)
 
-      if (response.status === 200) {
-        notify('Login realizado com sucesso!', 'success')
-        navigate('/home')
-      } else {
+        if (response.status === 200) {
+          notify('Login realizado com sucesso!', 'success')
+          navigate('/home')
+        } else {
+          notify('Erro ao realizar login. Verifique suas credenciais.', 'error')
+        }
+      } catch (error) {
         notify('Erro ao realizar login. Verifique suas credenciais.', 'error')
       }
     },

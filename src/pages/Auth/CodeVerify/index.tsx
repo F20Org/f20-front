@@ -51,27 +51,31 @@ export const CodeVerify = () => {
         .required('Obrigatório'),
     }),
     onSubmit: async (values) => {
-      const email = localStorage.getItem('emailForVerification') || ''
-      const password = localStorage.getItem('passwordForVerification') || ''
+      try {
+        const email = localStorage.getItem('emailForVerification') || ''
+        const password = localStorage.getItem('passwordForVerification') || ''
 
-      const response = await axiosApp.put<ResponseDTO<UserDTO>>(
-        '/auth/verify-email',
-        {
-          code: `${values.codeOne}${values.codeTwo}${values.codeThree}${values.codeFour}${values.codeFive}${values.codeSix}`,
-          email: email || '',
-        },
-      )
+        const response = await axiosApp.put<ResponseDTO<UserDTO>>(
+          '/auth/verify-email',
+          {
+            code: `${values.codeOne}${values.codeTwo}${values.codeThree}${values.codeFour}${values.codeFive}${values.codeSix}`,
+            email: email || '',
+          },
+        )
 
-      if (response.data.status === 200) {
-        notify('Código verificado realizado com sucesso!', 'success')
+        if (response.data.status === 200) {
+          notify('Código verificado realizado com sucesso!', 'success')
 
-        await fetchLogin(email, password)
+          await fetchLogin(email, password)
 
-        localStorage.removeItem('emailForVerification')
-        localStorage.removeItem('passwordForVerification')
+          localStorage.removeItem('emailForVerification')
+          localStorage.removeItem('passwordForVerification')
 
-        navigate('/')
-      } else {
+          navigate('/')
+        } else {
+          notify('Erro ao verificar código. Tente novamente.', 'error')
+        }
+      } catch (error) {
         notify('Erro ao verificar código. Tente novamente.', 'error')
       }
     },
