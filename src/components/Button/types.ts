@@ -1,6 +1,6 @@
 import type { themes } from '@themes/'
 
-export type ButtonProps = {
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   label: string
   icon?: string
   onClick: () => void

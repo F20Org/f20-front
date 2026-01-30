@@ -46,7 +46,12 @@ export const Register = () => {
       )
 
       if (response.data.status === 201) {
+        localStorage.setItem('emailForVerification', values.email)
+        localStorage.setItem('passwordForVerification', values.password)
+
         notify('Cadastro realizado com sucesso!', 'success')
+
+        navigate('/register/verify-code')
       } else {
         notify('Erro ao realizar cadastro. Tente novamente.', 'error')
       }
@@ -116,7 +121,7 @@ export const Register = () => {
           <Button
             backgroundColor='RED_PRIMARY_COLOR'
             label='Cadastrar'
-            onClick={() => {}}
+            onClick={() => registerFormik.handleSubmit()}
           />
         </form>
         <p>

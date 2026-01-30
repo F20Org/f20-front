@@ -15,6 +15,7 @@ import { SkillsSection } from 'pages/Characters/DetailsPage/components/RightSect
 import { SpellsSection } from 'pages/Characters/DetailsPage/components/RightSection/components/SpellsSection'
 import { InventorySection } from 'pages/Characters/DetailsPage/components/RightSection/components/InventorySection'
 import { DescriptionSection } from 'pages/Characters/DetailsPage/components/RightSection/components/DescriptionSection'
+import { CodeVerify } from 'pages/Auth/CodeVerify'
 
 const AppContainer = styled.div`
   width: 100%;
@@ -39,6 +40,7 @@ export const AppRoutes = () => {
 
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/register/verify-code' element={<CodeVerify />} />
 
           <Route path='/home' element={<Home />} />
 

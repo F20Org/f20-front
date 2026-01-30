@@ -72,7 +72,7 @@ export const Login = () => {
           <Button
             backgroundColor='RED_PRIMARY_COLOR'
             label='Entrar'
-            onClick={() => {}}
+            onClick={() => loginFormik.handleSubmit()}
           />
         </form>
         <p>
