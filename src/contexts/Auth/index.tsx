@@ -92,6 +92,7 @@ export const AuthContextProvider = (props: AuthProviderProps) => {
   return (
     <AuthContext.Provider
       value={{
+        setAuthUser,
         authUser,
         isAuthenticated,
         fetchLogin,

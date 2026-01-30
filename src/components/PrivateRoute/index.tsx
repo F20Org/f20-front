@@ -15,8 +15,6 @@ export const PrivateRoute = (props: PrivateRouteProps) => {
   }
 
   if (authUser?.emailVerified === false) {
-    console.log('Email not verified', authUser)
-
     axiosApp.post('auth/resend-verification-email', {
       email: authUser.email,
     })
@@ -25,8 +23,6 @@ export const PrivateRoute = (props: PrivateRouteProps) => {
       <Navigate to='/register/verify-code' state={{ from: location }} replace />
     )
   }
-
-  console.log('PrivateRoute rendered', { authUser, isAuthenticated })
 
   return children
 }
